@@ -1,0 +1,44 @@
+#Fast.ai v3 Notes: Les1 - pets
+
+##New Functions:
+1. **untar_data()**:  takes: | returns POSIX path:
+2. **get_image_files() **: takes: c: Path, str | returns: list of image files in the path.
+- ** ____() **: takes: | returns:
+
+##New Classes:
+1. **DataBunch**: def in train?
+
+- **ImageDataBunch**: DataBunch for vision
+	- **from_name_re():**: create list of f_names? using RegEx
+	- **normalize()**: normalize images--> mean = 0 and sigma = 1
+	- **show_batch(row, figureSize)**:  display a sample of data
+	- **cnn_learner**(DataBunch, more . . .): build a Learner(instance) of CNN style.
+	- **fit_one_cycle**(cy_len): fit using one cycle policy
+	
+- **ClassificationInterpretation**: present in **train**, interpretation methods for Classification task.
+	- __init__(Learner, many more, . . .)
+	- **from_learner**()
+	- **top_losses**()
+	-  **plot_top_losses**()
+	- **most_confused**()
+	- **plot_confusion_matrix**()
+	
+- **Learner**: present in **basic_train**
+
+## Gaps: 
+ds_type dataset type
+RegEx
+ImageDataBunch.normalize()
+Callable - -
+1cycle policy
+Learner
+train(: extension to Learner that easily implement callback)
+Application: widgets
+training: train, basic_train, Callback . . .
+Core:  . . 
+Utils: Helpers, . . 
+
+## Fits:
+**Callback**:  a function which is triggered by an event. used everywhere in CS. simple example: web process on a click.
+In terms of neural nets, we need to log data (model parameters, errors, etc) at different stages of training like before start of an epoch, end of an epoch, after completion of a batch, and other applications like visualization of training,
+Generally done by defining a Callback class(Interface) and defining all the required callback methods in that class. 
